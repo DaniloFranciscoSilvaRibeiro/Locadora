@@ -12,6 +12,9 @@ public class Cliente {
         Telefone = telefone;
     }
 
+    public String getDados(){
+        return Nome + " " + Telefone;
+    }
 
 
     public String getNome() {

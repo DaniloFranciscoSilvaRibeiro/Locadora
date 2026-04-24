@@ -4,12 +4,16 @@ public class Filme {
 
     private String Titulo;
     private String Genero;
-    private String ValorAluguel;
+    private double ValorAluguel;
 
-    public Filme(String titulo, String genero, String valorAluguel) {
+    public Filme(String titulo, String genero, double valorAluguel) {
         Titulo = titulo;
         Genero = genero;
         ValorAluguel = valorAluguel;
+    }
+
+    public String getDadosFilme() {
+        return Titulo + " " + Genero + " " + ValorAluguel;
     }
 
     public String getTitulo() {
@@ -28,11 +32,17 @@ public class Filme {
         Genero = genero;
     }
 
-    public String getValorAluguel() {
+    public double getValorAluguel() {
         return ValorAluguel;
     }
 
-    public void setValorAluguel(String valorAluguel) {
+    public void setValorAluguel(double valorAluguel) {
         ValorAluguel = valorAluguel;
     }
+
+    public void aplicardesconto(double percentual) {
+        ValorAluguel = ValorAluguel - (ValorAluguel * percentual / 100);
+
+    }
+
 }

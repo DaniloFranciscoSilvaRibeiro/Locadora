@@ -2,37 +2,48 @@ package Model;
 
 public class Aluguel {
 
-    private String Filme;
-    private String Cliente;
-    private String Dias;
+    private Filme Filme;
+    private Cliente Cliente;
+    private Integer Dias;
 
-    public Aluguel(String filme, String cliente, String dias) {
-        Filme = filme;
-        Cliente = cliente;
-        Dias = dias;
+    public Aluguel(Filme filme, Cliente cliente, Integer dias) {
+        this.Filme = filme;
+        this.Cliente = cliente;
+        this.Dias = dias;
     }
 
-    public String getFilme() {
+    public String getDadosAluguel(){
+        return Cliente + " " + Filme + " " + Dias;
+    }
+
+    public Filme getFilme() {
         return Filme;
     }
 
-    public void setFilme(String filme) {
+    public void setFilme(Filme filme) {
         Filme = filme;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return Cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         Cliente = cliente;
     }
 
-    public String getDias() {
+    public Integer getDias() {
         return Dias;
     }
 
-    public void setDias(String dias) {
+    public void setDias(Integer dias) {
         Dias = dias;
+    }
+    public double calculoTotal(){
+        return Filme.getValorAluguel() * Dias;
+    }
+
+    public String getResumo(){
+        return "Cliente: " + this.Cliente + " " + "\nDias: " + this.Dias + " " + "\nFilme: " + this.Filme;
     }
 }
