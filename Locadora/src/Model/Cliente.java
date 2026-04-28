@@ -1,7 +1,5 @@
 package Model;
 
-import jdk.dynalink.beans.StaticClass;
-
 public class Cliente {
 
     private String Nome;
@@ -11,11 +9,6 @@ public class Cliente {
         Nome = nome;
         Telefone = telefone;
     }
-
-    public String getDados(){
-        return Nome + " " + Telefone;
-    }
-
 
     public String getNome() {
         return Nome;
@@ -31,5 +24,13 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         Telefone = telefone;
+    }
+
+    public String getContato(){
+        return Nome + " " + Telefone;
+    }
+
+    public String apresentar(){
+        return "Contato: " + getContato();
     }
 }

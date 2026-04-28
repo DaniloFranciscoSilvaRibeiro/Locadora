@@ -4,16 +4,12 @@ public class Filme {
 
     private String Titulo;
     private String Genero;
-    private double ValorAluguel;
+    private Double valorAluguel;
 
-    public Filme(String titulo, String genero, double valorAluguel) {
+    public Filme(String titulo, String genero, Double valorAluguel) {
         Titulo = titulo;
         Genero = genero;
-        ValorAluguel = valorAluguel;
-    }
-
-    public String getDadosFilme() {
-        return Titulo + " " + Genero + " " + ValorAluguel;
+        this.valorAluguel = valorAluguel;
     }
 
     public String getTitulo() {
@@ -32,16 +28,19 @@ public class Filme {
         Genero = genero;
     }
 
-    public double getValorAluguel() {
-        return ValorAluguel;
+    public Double getValorAluguel() {
+        return valorAluguel;
     }
 
-    public void setValorAluguel(double valorAluguel) {
-        ValorAluguel = valorAluguel;
+    public void setValorAluguel(Double valorAluguel) {
+        this.valorAluguel = valorAluguel;
     }
 
+    public String exibirdetalhes(){
+        return "Filme: " + this.Titulo + "\nGênero: " + this.Genero + "\nValor do aluguel: " + this.valorAluguel;
+    }
     public void aplicardesconto(double percentual) {
-        ValorAluguel = ValorAluguel - (ValorAluguel * percentual / 100);
+         valorAluguel=  valorAluguel- (valorAluguel * percentual / 100);
 
     }
 

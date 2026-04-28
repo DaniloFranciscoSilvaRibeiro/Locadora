@@ -12,10 +12,6 @@ public class Aluguel {
         this.Dias = dias;
     }
 
-    public String getDadosAluguel(){
-        return Cliente + " " + Filme + " " + Dias;
-    }
-
     public Filme getFilme() {
         return Filme;
     }
@@ -44,6 +40,6 @@ public class Aluguel {
     }
 
     public String getResumo(){
-        return "Cliente: " + this.Cliente + " " + "\nDias: " + this.Dias + " " + "\nFilme: " + this.Filme;
+        return "Cliente: " + Cliente.getNome() + "\nDias: " + Dias + "\nTotal: " + calculoTotal();
     }
 }
